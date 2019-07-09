@@ -1,7 +1,7 @@
 const express = require('express');
 const massive = require('massive');
 require('dotenv').config();
-
+const controller = require('./controller')
 const {CONNECTION_STRING} = process.env
 
 
@@ -10,6 +10,8 @@ const app = express();
 
 app.use(express.json());
 
+//Auth Endpoints
+app.post('/auth/register', controller.register)
 
 
 
